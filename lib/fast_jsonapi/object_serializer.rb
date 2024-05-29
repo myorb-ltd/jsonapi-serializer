@@ -301,7 +301,7 @@ module FastJsonapi
 
       def serializer_for(name)
         namespace = self.name.gsub(/()?\w+Serializer$/, '')
-        serializer_name = "#{name.to_s.demodulize.classify}Serializer"
+        serializer_name = "#{name.to_s.classify}Serializer"
         serializer_class_name = namespace + serializer_name
         begin
           serializer_class_name.constantize
